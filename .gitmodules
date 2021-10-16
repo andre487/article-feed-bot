@@ -1,0 +1,3 @@
+[submodule "go-yc-secret-provider"]
+	path = go-yc-secret-provider
+	url = git@github.com:andre487/go-yc-secret-provider.git
