@@ -5,6 +5,8 @@ import (
 )
 
 func main() {
+	feedRequests := make(chan *tb.Message, 2048)
+
 	bot, err := tb.NewBot(tb.Settings{
 		Token:  GetBotToken(false),
 		Poller: &tb.LongPoller{},
@@ -15,5 +17,10 @@ func main() {
 		bot.Send(m.Sender, "Hello world!")
 	})
 
+	bot.Handle("/add", func(m *tb.Message) {
+		feedRequests <- m
+	})
+
+	go AddFeed(bot, feedRequests)
 	bot.Start()
 }
