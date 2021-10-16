@@ -1,8 +1,8 @@
-module github.com/andre487/article-feed-bot
+module github.com/andre487/article-feed-bot/bot
 
 go 1.17
 
-replace github.com/andre487/go-yc-secret-provider => ./go-yc-secret-provider
+replace github.com/andre487/go-yc-secret-provider => ../go-yc-secret-provider
 
 require (
 	github.com/andre487/go-yc-secret-provider v0.0.0-00010101000000-000000000000
